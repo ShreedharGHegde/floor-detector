@@ -96,6 +96,9 @@ app.get("/listUploadedImages", function(req, res) {
     .then(urls => res.send(urls));
 });
 
+var port_number = server.listen(process.env.PORT || 5000);
+app.listen(port_number);
+
 
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
@@ -105,6 +108,7 @@ if(process.env.NODE_ENV === 'production') {
   })
 }
 
-app.listen(5000, function() {
-  console.log("app listening on port 5000!");
-});
+// app.listen(5000, function() {
+//   console.log("app listening on port 5000!");
+// });
+
